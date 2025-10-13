@@ -270,8 +270,8 @@
 </head>
 <body>
     <div class="container">
-        <h1>🎧 Active Noise Cancellation Simulator</h1>
-        <p class="subtitle">Explore how ANC algorithms work with real-time parameter adjustments</p>
+        <h1>Active Noise Cancellation Simulator</h1>
+        <p class="subtitle">Explore how active noise cancellation works by adjusting distances and DSP parameters!</p>
         
         <div class="controls">
             <div class="control-group">
@@ -280,7 +280,7 @@
                     <span class="value-display" id="muValue">0.01</span>
                 </label>
                 <input type="range" id="muSlider" min="0.001" max="0.1" step="0.001" value="0.01">
-                <span class="help-text">Learning rate - higher = faster but less stable</span>
+                <span class="help-text">Learning rate (higher = faster, but less stable)</span>
             </div>
             
             <div class="control-group">
@@ -289,7 +289,7 @@
                     <span class="value-display" id="filterValue">64</span>
                 </label>
                 <input type="range" id="filterSlider" min="16" max="256" step="16" value="64">
-                <span class="help-text">Number of taps - longer = better but slower</span>
+                <span class="help-text">Taps (filter complexity; longer = better but slower)</span>
             </div>
             
             <div class="control-group">
@@ -298,7 +298,7 @@
                     <span class="value-display" id="procDelayValue">5</span>
                 </label>
                 <input type="range" id="procDelaySlider" min="1" max="20" step="1" value="5">
-                <span class="help-text">DSP + DAC time - must be minimal!</span>
+                <span class="help-text">Signal Processing and Analog to Digital Conversion time</span>
             </div>
             
             <div class="control-group">
@@ -307,7 +307,7 @@
                     <span class="value-display" id="micDelayValue">10</span>
                 </label>
                 <input type="range" id="micDelaySlider" min="1" max="30" step="1" value="10">
-                <span class="help-text">Reference mic distance - more = better</span>
+                <span class="help-text">Distance between reference microphone and ear</span>
             </div>
         </div>
         
@@ -352,13 +352,12 @@
         </div>
         
         <div class="info-section">
-            <h3>💡 How to Use This Simulator</h3>
+            <h3>About This Simulator</h3>
             <p>
-                <strong>Step Size (μ):</strong> Controls how quickly the algorithm learns. Try increasing it to see faster convergence, but be careful - too high causes instability!<br><br>
-                <strong>Filter Length:</strong> More taps = better cancellation of complex noise, but requires more computation.<br><br>
-                <strong>Processing Delay:</strong> Simulates real-world DSP latency. If this exceeds mic-to-ear delay, the system becomes non-causal and fails!<br><br>
-                <strong>Mic-to-Ear Delay:</strong> Physical distance gives "advance warning" of noise. More distance = more time to react.<br><br>
-                <strong>🎯 Try this:</strong> Set processing delay > mic-to-ear delay and watch the system fail! This shows why ANC needs fast DSPs and forward-positioned microphones.
+                <strong>Step Size (μ):</strong> Controls how quickly the algorithm learns. Try increasing it to see faster convergence, but be careful - too high causes instability.<br><br>
+                <strong>Filter Length:</strong> More taps = better cancellation of complex noise signals, but requires more computation, which takes longer.<br><br>
+                <strong>Processing Delay:</strong> Simulates real-world DSP latency. If this exceeds mic-to-ear delay, the system becomes non-causal and fails.<br><br>
+                <strong>Mic-to-Ear Delay:</strong> Physical distance gives "advance warning" of noise. More distance = more time to react. See what happens when processing delay > mic-to-ear delay...<br><br>
             </p>
         </div>
         
