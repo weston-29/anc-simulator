@@ -365,6 +365,9 @@
         
         <div style="text-align: center; margin-top: 40px; padding: 30px; background: #f8f9fa; border-radius: 15px; border: 2px solid #667eea;">
             <h3 style="color: #333; margin-bottom: 20px;">NLMS Weight Update Equation</h3>
+            <p style="color: #555; font-size: 1em; line-height: 1.6; margin-bottom: 20px; max-width: 900px; margin-left: auto; margin-right: auto;">
+                For every incoming audio sample, the NLMS algorithm updates the filter weights proportionally to the error (residual noise) and the input signal strength—this creates a feedback loop where the anti-noise signal gradually learns to match the original noise, enabling real-time adaptation as acoustic conditions change, which is why this approach works so well for dynamic environments like airplane cabins or city streets.
+            </p>
             <div style="font-size: 1.3em; margin: 20px 0;">
                 $w(n+1) = w(n) + \frac{\mu}{\alpha + ||x(n)||^2} e(n) x(n)$
             </div>
@@ -384,7 +387,7 @@
                     📄 <a href="https://pubs.aip.org/asa/jasa/article/25/6/1130/747326/Electronic-Sound-Absorber" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 500; border-bottom: 2px solid transparent; transition: border-bottom 0.2s;" onmouseover="this.style.borderBottom='2px solid #667eea'" onmouseout="this.style.borderBottom='2px solid transparent'">Olson and May 1953 - Experimental Demos of Sound Absorption @ RCA Labs</a>
                 </p>
                 <p style="margin: 10px 0;">
-                    📄 <a href="https://www-isl.stanford.edu/~widrow/papers/c1960adaptiveswitching.pdf" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 500; border-bottom: 2px solid transparent; transition: border-bottom 0.2s;" onmouseover="this.style.borderBottom='2px solid #667eea'" onmouseout="this.style.borderBottom='2px solid transparent'">Widrow and Hoff 1960 - Adaptive Switching Circuits: Algorithmic Ancestor for the Modern LMS Weight Update Algorithm</a>
+                    📄 <a href="https://www-isl.stanford.edu/~widrow/papers/c1960adaptiveswitching.pdf" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 500; border-bottom: 2px solid transparent; transition: border-bottom 0.2s;" onmouseover="this.style.borderBottom='2px solid #667eea'" onmouseout="this.style.borderBottom='2px solid transparent'">Widrow and Hoff 1960 - The Algorithmic Ancestor of the Modern (N)LMS Weight Update Algorithms</a>
                 </p>
             </div>
         </div>
