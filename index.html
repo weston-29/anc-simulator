@@ -280,7 +280,7 @@
                     <span class="value-display" id="muValue">0.01</span>
                 </label>
                 <input type="range" id="muSlider" min="0.001" max="0.1" step="0.001" value="0.01">
-                <span class="help-text">Controls how quickly the algorithm learns. In practical terms, how much the weight vector impacts each update step.</span>
+                <span class="help-text">Controls how quickly the algorithm learns. <br><br> In practical terms, how much the weight vector impacts each update step.</span>
             </div>
             
             <div class="control-group">
@@ -289,7 +289,7 @@
                     <span class="value-display" id="filterValue">64</span>
                 </label>
                 <input type="range" id="filterSlider" min="16" max="256" step="16" value="64">
-                <span class="help-text">How much 'memory' the filter has when trying to cancel sound. Practically, the sample length of the weight vector.</span>
+                <span class="help-text">How much 'memory' the filter has when trying to cancel sound. <br><br> Practically, the sample length of the weight vector.</span>
             </div>
             
             <div class="control-group">
@@ -298,7 +298,7 @@
                     <span class="value-display" id="procDelayValue">5</span>
                 </label>
                 <input type="range" id="procDelaySlider" min="1" max="20" step="1" value="5">
-                <span class="help-text">Simulates real-world DSP latency. If this exceeds mic-to-ear delay, the system becomes non-causal and fails.</span>
+                <span class="help-text">Simulates real-world DSP latency. <br><br> If this exceeds mic-to-ear delay, the system becomes non-causal and fails.</span>
             </div>
             
             <div class="control-group">
@@ -307,7 +307,7 @@
                     <span class="value-display" id="micDelayValue">10</span>
                 </label>
                 <input type="range" id="micDelaySlider" min="1" max="30" step="1" value="10">
-                <span class="help-text">Simulates physical distance between the reference mic and ear. The time sound takes to get across this gap is when all the computation happens!</span>
+                <span class="help-text">Simulates distance between reference mic and ear. <br><br> The time sound takes to get across this gap is when all the computation happens!</span>
             </div>
         </div>
         
