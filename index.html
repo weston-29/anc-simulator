@@ -381,13 +381,16 @@
             <h3 style="color: #333; margin-bottom: 20px;">Further Reading</h3>
             <div style="text-align: left; max-width: 800px; margin: 0 auto; line-height: 2;">
                 <p style="margin: 10px 0;">
-                    📄 <a href="https://patentimages.storage.googleapis.com/97/93/fc/19408ed05d22d6/US2043416.pdf" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 500; border-bottom: 2px solid transparent; transition: border-bottom 0.2s;" onmouseover="this.style.borderBottom='2px solid #667eea'" onmouseout="this.style.borderBottom='2px solid transparent'">Paul Lueg's Original 1936 Patent for Sound Wave Cancellation</a>
+                    ✍︎ <a href="https://patentimages.storage.googleapis.com/97/93/fc/19408ed05d22d6/US2043416.pdf" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 500; border-bottom: 2px solid transparent; transition: border-bottom 0.2s;" onmouseover="this.style.borderBottom='2px solid #667eea'" onmouseout="this.style.borderBottom='2px solid transparent'">Paul Lueg's Original 1936 Patent for Sound Wave Cancellation</a>
                 </p>
                 <p style="margin: 10px 0;">
-                    📄 <a href="https://pubs.aip.org/asa/jasa/article/25/6/1130/747326/Electronic-Sound-Absorber" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 500; border-bottom: 2px solid transparent; transition: border-bottom 0.2s;" onmouseover="this.style.borderBottom='2px solid #667eea'" onmouseout="this.style.borderBottom='2px solid transparent'">Olson and May 1953 - Experimental Demos of Sound Absorption @ RCA Labs</a>
+                    ✍︎ <a href="https://pubs.aip.org/asa/jasa/article/25/6/1130/747326/Electronic-Sound-Absorber" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 500; border-bottom: 2px solid transparent; transition: border-bottom 0.2s;" onmouseover="this.style.borderBottom='2px solid #667eea'" onmouseout="this.style.borderBottom='2px solid transparent'">Olson and May 1953 - Experimental Demos of Sound Absorption @ RCA Labs</a>
                 </p>
                 <p style="margin: 10px 0;">
-                    📄 <a href="https://www-isl.stanford.edu/~widrow/papers/c1960adaptiveswitching.pdf" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 500; border-bottom: 2px solid transparent; transition: border-bottom 0.2s;" onmouseover="this.style.borderBottom='2px solid #667eea'" onmouseout="this.style.borderBottom='2px solid transparent'">Widrow and Hoff 1960 - The Algorithmic Ancestor of the Modern (N)LMS Weight Update Algorithms</a>
+                    ✍︎ <a href="https://www-isl.stanford.edu/~widrow/papers/c1960adaptiveswitching.pdf" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 500; border-bottom: 2px solid transparent; transition: border-bottom 0.2s;" onmouseover="this.style.borderBottom='2px solid #667eea'" onmouseout="this.style.borderBottom='2px solid transparent'">Widrow and Hoff 1960 - The Algorithmic Ancestor of the Modern (N)LMS Weight Update Algorithms</a>
+                </p>
+                <p style="margin: 10px 0;">
+                    ✍︎ <a href="https://www.mathworks.com/help/audio/ug/active-noise-control-with-simulink.html" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 500; border-bottom: 2px solid transparent; transition: border-bottom 0.2s;" onmouseover="this.style.borderBottom='2px solid #667eea'" onmouseout="this.style.borderBottom='2px solid transparent'">A Cool Tutorial To Build Your Own Physical ANC Experiment using MATLAB, Speakers, and some PVC!</a>
                 </p>
             </div>
         </div>
@@ -396,7 +399,7 @@
 
     <script>
         // Update slider value displays with gradient colors
-        function updateSliderDisplay(sliderId, displayId, min, max) {
+        function updateSliderDisplay(sliderId, displayId, min, max, forward=True) {
             const slider = document.getElementById(sliderId);
             const display = document.getElementById(displayId);
             
@@ -405,9 +408,14 @@
                 const percentage = (value - min) / (max - min);
                 
                 // Blue to Red gradient
-                const r = Math.round(percentage * 255);
-                const b = Math.round((1 - percentage) * 255);
-                const color = `rgb(${r}, 0, ${b})`;
+                if (forward):
+                    const r = Math.round(percentage * 255);
+                    const b = Math.round((1 - percentage) * 255);
+                    const color = `rgb(${r}, 0, ${b})`;
+                else:
+                    const b = Math.round(percentage * 255);
+                    const r = Math.round((1 - percentage) * 255);
+                    const color = `rgb(${r}, 0, ${b})`;
                 
                 display.style.background = color;
                 
@@ -424,7 +432,7 @@
         updateSliderDisplay('muSlider', 'muValue', 0.001, 0.1);
         updateSliderDisplay('filterSlider', 'filterValue', 16, 256);
         updateSliderDisplay('procDelaySlider', 'procDelayValue', 1, 20);
-        updateSliderDisplay('micDelaySlider', 'micDelayValue', 1, 30);
+        updateSliderDisplay('micDelaySlider', 'micDelayValue', 1, 30, False);
 
         let charts = {};
 
