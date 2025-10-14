@@ -353,15 +353,34 @@
         
         <div class="info-section">
             <h3>About This Simulator</h3>
-            <p>
-                If you've tried the new Apple AirPods 4 with ANC, you might have been impressed by how much background noise they eliminated without creating a physical seal in your ear. Active noise cancellation (ANC) began in the 1930s when Paul Lueg proposed “anti-sound,” a theoretical method of using soundwaves with the exact opposite physical properties of background noise that would 'cancel each other out.' Harry Olson proved this theory experimentally at RCA in the early 1950s. In 1959, Stanford professor Bernt Widrow and his student Marcian “Ted” Hoff created adaptive filtering (the least-mean-squares (LMS) algorithm - an early version of what this simulation uses), giving ANC the adaptive learning brain it needed. Since then, engineers at Southampton and Bose have adapted ANC to work on tiny processors found in devices like FAA-certified pilot headsets (1989), Bose QuietComfort headphones (2000), and Apple’s AirPods Pro (2019). Use this simulation to explore how changing parameters of the digital signal processing (DSP) and physical orientation of microphones changes the efficacy of the anti-noise!<br><br>
+            <p id="infoText">
+                If you've tried the new AirPods 4 with ANC, you may have been impressed by how much background noise they removed, despite creating no physical seal in your ear.<span id="dots">...</span><span id="moreText" style="display: none;"> Active noise cancellation (ANC) began in the 1930s when Paul Lueg proposed "anti-sound," a theoretical method of using soundwaves with the exact opposite physical properties of background noise that would 'cancel each other out.' Harry Olson proved this theory experimentally at RCA in the early 1950s. In 1959, Stanford professor Bernt Widrow and his student Marcian "Ted" Hoff created adaptive filtering (the least-mean-squares (LMS) algorithm - an early version of what this simulation uses), giving ANC the adaptive learning brain it needed. Since then, engineers at Southampton and Bose have adapted ANC to work on tiny processors found in devices like FAA-certified pilot headsets (1989), Bose QuietComfort headphones (2000), and Apple's AirPods Pro (2019). Use this simulation to explore how changing parameters of the digital signal processing (DSP) and physical orientation of microphones changes the efficacy of the anti-noise!<br><br>
                 
                 <strong>Step Size (μ):</strong> Controls how quickly the algorithm learns. In practical terms, how much the weight vector impacts each update step.<br><br>
                 <strong>Filter Length:</strong> How much 'memory' the filter has when trying to cancel sound. Practically, the sample length of the weight vector.<br><br>
                 <strong>Processing Delay:</strong> Simulates real-world DSP latency. If this exceeds mic-to-ear delay, the system becomes non-causal and fails.<br><br>
-                <strong>Mic-to-Ear Delay:</strong> Simulates physical distance between the external mic and ear. The time sound takes to get across this gap is when all the computation happens! <br><br> See what happens when processing delay > mic-to-ear delay...<br><br>
+                <strong>Mic-to-Ear Delay:</strong> Simulates physical distance between the external mic and ear. The time sound takes to get across this gap is when all the computation happens! <br><br> See what happens when processing delay > mic-to-ear delay...<br><br></span>
             </p>
+            <span id="readMoreBtn" style="color: #999; font-size: 0.9em; cursor: pointer; display: inline-block; transition: all 0.2s;" onmouseover="this.style.fontSize='0.95em'; this.style.color='#667eea';" onmouseout="this.style.fontSize='0.9em'; this.style.color='#999';" onclick="toggleReadMore()">(click for more)</span>
         </div>
+        
+        <script>
+        function toggleReadMore() {
+            const dots = document.getElementById('dots');
+            const moreText = document.getElementById('moreText');
+            const btnText = document.getElementById('readMoreBtn');
+            
+            if (dots.style.display === 'none') {
+                dots.style.display = 'inline';
+                moreText.style.display = 'none';
+                btnText.textContent = '(click for more)';
+            } else {
+                dots.style.display = 'none';
+                moreText.style.display = 'inline';
+                btnText.textContent = '(click for less)';
+            }
+        }
+        </script>
         
         <div style="text-align: center; margin-top: 40px; padding: 30px; background: #f8f9fa; border-radius: 15px; border: 2px solid #667eea;">
             <h3 style="color: #333; margin-bottom: 20px;">NLMS Weight Update Equation</h3>
