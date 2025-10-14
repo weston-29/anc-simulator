@@ -397,9 +397,9 @@
         
     </div>
 
-    <script>
+     <script>
         // Update slider value displays with gradient colors
-        function updateSliderDisplay(sliderId, displayId, min, max, forward=True) {
+        function updateSliderDisplay(sliderId, displayId, min, max, forward = true) {
             const slider = document.getElementById(sliderId);
             const display = document.getElementById(displayId);
             
@@ -408,14 +408,15 @@
                 const percentage = (value - min) / (max - min);
                 
                 // Blue to Red gradient
-                if (forward):
-                    const r = Math.round(percentage * 255);
-                    const b = Math.round((1 - percentage) * 255);
-                    const color = `rgb(${r}, 0, ${b})`;
-                else:
-                    const b = Math.round(percentage * 255);
-                    const r = Math.round((1 - percentage) * 255);
-                    const color = `rgb(${r}, 0, ${b})`;
+                let r, b;
+                if (forward) {
+                    r = Math.round(percentage * 255);
+                    b = Math.round((1 - percentage) * 255);
+                } else {
+                    b = Math.round(percentage * 255);
+                    r = Math.round((1 - percentage) * 255);
+                }
+                const color = `rgb(${r}, 0, ${b})`;
                 
                 display.style.background = color;
                 
@@ -432,7 +433,7 @@
         updateSliderDisplay('muSlider', 'muValue', 0.001, 0.1);
         updateSliderDisplay('filterSlider', 'filterValue', 16, 256);
         updateSliderDisplay('procDelaySlider', 'procDelayValue', 1, 20);
-        updateSliderDisplay('micDelaySlider', 'micDelayValue', 1, 30, False);
+        updateSliderDisplay('micDelaySlider', 'micDelayValue', 1, 30, false);
 
         let charts = {};
 
