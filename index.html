@@ -12,7 +12,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
 
-    <!-- Event Listener for rendering LaTeX equation via KaTeX package -->
     <script>
     document.addEventListener("DOMContentLoaded", function() {
         renderMathInElement(document.body, {
@@ -66,7 +65,7 @@
             margin-bottom: 30px;
             padding: 25px;
             background: #f8f9fa;
-            border-radius: 15px;
+            border-radius: 8px;
         }
         
         .control-group {
@@ -84,10 +83,10 @@
         }
         
         .value-display {
-            background: #667eea;
+            background: #2563eb;
             color: white;
             padding: 4px 12px;
-            border-radius: 20px;
+            border-radius: 4px;
             font-size: 0.9em;
             font-weight: 700;
         }
@@ -107,13 +106,13 @@
             width: 20px;
             height: 20px;
             border-radius: 50%;
-            background: #667eea;
+            background: #2563eb;
             cursor: pointer;
             transition: all 0.2s;
         }
         
         input[type="range"]::-webkit-slider-thumb:hover {
-            background: #764ba2;
+            background: #1e40af;
             transform: scale(1.2);
         }
         
@@ -121,7 +120,7 @@
             width: 20px;
             height: 20px;
             border-radius: 50%;
-            background: #667eea;
+            background: #2563eb;
             cursor: pointer;
             border: none;
         }
@@ -138,21 +137,22 @@
         }
         
         button {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: #2563eb;
             color: white;
             border: none;
             padding: 15px 40px;
             font-size: 1.1em;
             font-weight: 600;
-            border-radius: 30px;
+            border-radius: 6px;
             cursor: pointer;
             transition: all 0.3s;
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+            box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
         }
         
         button:hover {
+            background: #1e40af;
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
         }
         
         button:active {
@@ -194,12 +194,12 @@
         }
         
         .metric-card {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: #2563eb;
             color: white;
             padding: 20px;
-            border-radius: 15px;
+            border-radius: 8px;
             text-align: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
         
         .metric-label {
@@ -227,7 +227,7 @@
         .chart-container {
             background: #f8f9fa;
             padding: 20px;
-            border-radius: 15px;
+            border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
         
@@ -252,9 +252,9 @@
         .info-section {
             background: #e8f4f8;
             padding: 20px;
-            border-radius: 10px;
+            border-radius: 8px;
             margin-top: 20px;
-            border-left: 4px solid #667eea;
+            border-left: 4px solid #2563eb;
         }
         
         .info-section h3 {
@@ -350,13 +350,6 @@
                 <canvas id="spectrumChart"></canvas>
             </div>
         </div>
-        
-        <style>
-        .button-container {
-            text-align: center;
-            margin-top: 10px;
-        }
-    </style>
 
     <div class="info-section">
         <h3>About This Simulator</h3>
@@ -364,7 +357,7 @@
             If you've tried the new AirPods 4 with ANC, you may have been impressed by how much background noise they removed, despite creating no physical seal in your ear.<span id="dots">...</span><span id="moreText" style="display: none;"> <br><br><strong>Active noise cancellation (ANC)</strong> began in the 1930s when <em>Paul Lueg</em> proposed "anti-sound," a theoretical method of using soundwaves with the exact opposite physical properties of background noise that would 'cancel each other out.' <em>Harry Olson</em> proved this theory experimentally at RCA in the early 1950s. In 1959, <em>Stanford professor Bernt Widrow</em> and his student Marcian "Ted" Hoff created adaptive filtering and <strong>the least-mean-squares (LMS) algorithm</strong> - an early version of what this simulation uses, giving ANC the adaptive learning brain it needed. Since then, engineers at Southampton and Bose have adapted ANC to work on tiny processors found in devices like FAA-certified pilot headsets (1989), Bose QuietComfort headphones (2000), and Apple's AirPods Pro (2019). Use this simulation to explore how changing parameters of the <em>digital signal processing (DSP)</em> and physical orientation of microphones changes the efficacy of the anti-noise!<br><br>
         </p>
         <div class="button-container">
-            <span id="readMoreBtn" style="color: #999; font-size: 0.9em; cursor: pointer; display: inline-block; transition: all 0.2s;" onmouseover="this.style.fontSize='0.95em'; this.style.color='#667eea';" onmouseout="this.style.fontSize='0.9em'; this.style.color='#999';" onclick="toggleReadMore()">(click for more)</span>
+            <span id="readMoreBtn" style="color: #999; font-size: 0.9em; cursor: pointer; display: inline-block; transition: all 0.2s;" onmouseover="this.style.fontSize='0.95em'; this.style.color='#2563eb';" onmouseout="this.style.fontSize='0.9em'; this.style.color='#999';" onclick="toggleReadMore()">(click for more)</span>
         </div>
     </div>
 
@@ -386,7 +379,7 @@
     }
     </script>
         
-        <div style="text-align: center; margin-top: 40px; padding: 30px; background: #f8f9fa; border-radius: 15px; border: 2px solid #667eea;">
+        <div style="text-align: center; margin-top: 40px; padding: 30px; background: #f8f9fa; border-radius: 8px; border: 2px solid #2563eb;">
             <h3 style="color: #333; margin-bottom: 20px;">NLMS Weight Update Equation</h3>
             <p style="color: #555; font-size: 1em; line-height: 1.6; margin-bottom: 20px; max-width: 900px; margin-left: auto; margin-right: auto;">
                 The Least-Means-Squared (LMS) algorithm updates the sound cancellation filter weights proportionally to any residual error noise that sneaks through the initial filtering. This creates a feedback loop where the anti-noise signal gradually learns to match the original noise, as both sounds evolve.
@@ -400,20 +393,20 @@
             </p>
         </div>
 
-        <div style="text-align: center; margin-top: 30px; padding: 30px; background: #f8f9fa; border-radius: 15px; border: 2px solid #667eea;">
+        <div style="text-align: center; margin-top: 30px; padding: 30px; background: #f8f9fa; border-radius: 8px; border: 2px solid #2563eb;">
             <h3 style="color: #333; margin-bottom: 20px;">Further Reading</h3>
             <div style="text-align: left; max-width: 800px; margin: 0 auto; line-height: 2;">
                 <p style="margin: 10px 0;">
-                    ✍︎ <a href="https://patentimages.storage.googleapis.com/97/93/fc/19408ed05d22d6/US2043416.pdf" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 500; border-bottom: 2px solid transparent; transition: border-bottom 0.2s;" onmouseover="this.style.borderBottom='2px solid #667eea'" onmouseout="this.style.borderBottom='2px solid transparent'">Paul Lueg's Original 1936 Patent for Sound Wave Cancellation</a>
+                    ✍︎ <a href="https://patentimages.storage.googleapis.com/97/93/fc/19408ed05d22d6/US2043416.pdf" target="_blank" style="color: #2563eb; text-decoration: none; font-weight: 500; border-bottom: 2px solid transparent; transition: border-bottom 0.2s;" onmouseover="this.style.borderBottom='2px solid #2563eb'" onmouseout="this.style.borderBottom='2px solid transparent'">Paul Lueg's Original 1936 Patent for Sound Wave Cancellation</a>
                 </p>
                 <p style="margin: 10px 0;">
-                    ✍︎ <a href="https://pubs.aip.org/asa/jasa/article/25/6/1130/747326/Electronic-Sound-Absorber" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 500; border-bottom: 2px solid transparent; transition: border-bottom 0.2s;" onmouseover="this.style.borderBottom='2px solid #667eea'" onmouseout="this.style.borderBottom='2px solid transparent'">Olson and May 1953 - Experimental Demos of Sound Absorption @ RCA Labs</a>
+                    ✍︎ <a href="https://pubs.aip.org/asa/jasa/article/25/6/1130/747326/Electronic-Sound-Absorber" target="_blank" style="color: #2563eb; text-decoration: none; font-weight: 500; border-bottom: 2px solid transparent; transition: border-bottom 0.2s;" onmouseover="this.style.borderBottom='2px solid #2563eb'" onmouseout="this.style.borderBottom='2px solid transparent'">Olson and May 1953 - Experimental Demos of Sound Absorption @ RCA Labs</a>
                 </p>
                 <p style="margin: 10px 0;">
-                    ✍︎ <a href="https://www-isl.stanford.edu/~widrow/papers/c1960adaptiveswitching.pdf" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 500; border-bottom: 2px solid transparent; transition: border-bottom 0.2s;" onmouseover="this.style.borderBottom='2px solid #667eea'" onmouseout="this.style.borderBottom='2px solid transparent'">Widrow and Hoff 1960 - The Algorithmic Ancestor of the Modern (N)LMS Weight Update Algorithms</a>
+                    ✍︎ <a href="https://www-isl.stanford.edu/~widrow/papers/c1960adaptiveswitching.pdf" target="_blank" style="color: #2563eb; text-decoration: none; font-weight: 500; border-bottom: 2px solid transparent; transition: border-bottom 0.2s;" onmouseover="this.style.borderBottom='2px solid #2563eb'" onmouseout="this.style.borderBottom='2px solid transparent'">Widrow and Hoff 1960 - The Algorithmic Ancestor of the Modern (N)LMS Weight Update Algorithms</a>
                 </p>
                 <p style="margin: 10px 0;">
-                    ✍︎ <a href="https://www.mathworks.com/help/audio/ug/active-noise-control-with-simulink.html" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 500; border-bottom: 2px solid transparent; transition: border-bottom 0.2s;" onmouseover="this.style.borderBottom='2px solid #667eea'" onmouseout="this.style.borderBottom='2px solid transparent'">A Cool Tutorial To Build Your Own Physical ANC Experiment using MATLAB, Speakers, and some PVC!</a>
+                    ✍︎ <a href="https://www.mathworks.com/help/audio/ug/active-noise-control-with-simulink.html" target="_blank" style="color: #2563eb; text-decoration: none; font-weight: 500; border-bottom: 2px solid transparent; transition: border-bottom 0.2s;" onmouseover="this.style.borderBottom='2px solid #2563eb'" onmouseout="this.style.borderBottom='2px solid transparent'">A Cool Tutorial To Build Your Own Physical ANC Experiment using MATLAB, Speakers, and some PVC!</a>
                 </p>
             </div>
         </div>
@@ -421,7 +414,6 @@
     </div>
 
      <script>
-        // Update slider value displays with gradient colors
         function updateSliderDisplay(sliderId, displayId, min, max, forward = true) {
             const slider = document.getElementById(sliderId);
             const display = document.getElementById(displayId);
@@ -430,7 +422,6 @@
                 const value = parseFloat(this.value);
                 const percentage = (value - min) / (max - min);
                 
-                // Blue to Red gradient
                 let r, b;
                 if (forward) {
                     r = Math.round(percentage * 255);
@@ -443,7 +434,6 @@
                 
                 display.style.background = color;
                 
-                // Update text
                 if (sliderId === 'muSlider') {
                     display.textContent = value.toFixed(3);
                 } else {
@@ -452,7 +442,6 @@
             };
         }
         
-        // Initialize all sliders
         updateSliderDisplay('muSlider', 'muValue', 0.001, 0.1);
         updateSliderDisplay('filterSlider', 'filterValue', 16, 256);
         updateSliderDisplay('procDelaySlider', 'procDelayValue', 1, 20);
@@ -599,7 +588,6 @@
             const isCausal = systemDelay <= refToEarDelay;
             const availableTimeMs = ((refToEarDelay - systemDelay) / fs * 1000).toFixed(2);
             
-            // Update status
             const statusDiv = document.getElementById('status');
             statusDiv.style.display = 'block';
             
@@ -618,13 +606,11 @@
             const residualRMS = calculateRMS(residualNoise, convergencePoint);
             const noiseReductionDB = 10 * Math.log10(originalRMS / (residualRMS + 1e-10));
             
-            // Update metrics
             document.getElementById('metrics').style.display = 'grid';
             document.getElementById('noiseReduction').textContent = noiseReductionDB.toFixed(1) + ' dB';
             document.getElementById('availableTime').textContent = availableTimeMs + ' ms';
             document.getElementById('systemStatus').textContent = isCausal ? '✓' : '✗';
             
-            // Show charts on first run
             document.querySelector('.charts').classList.add('visible');
             
             updateCharts(noise, antiNoise, residualNoise, errorSignal, fs);
@@ -637,7 +623,6 @@
             
             const timeAxis = Array.from({length: displayLength}, (_, i) => ((startSample + i) / fs * 1000).toFixed(1));
             
-            // Signal Chart
             if (charts.signal) charts.signal.destroy();
             charts.signal = new Chart(document.getElementById('signalChart'), {
                 type: 'line',
@@ -668,7 +653,6 @@
                 }
             });
             
-            // Residual Chart
             if (charts.residual) charts.residual.destroy();
             charts.residual = new Chart(document.getElementById('residualChart'), {
                 type: 'line',
@@ -699,7 +683,6 @@
                 }
             });
             
-            // Convergence Chart
             const windowSize = 100;
             const rmsError = [];
             const rmsTimeAxis = [];
@@ -738,7 +721,6 @@
                 }
             });
             
-            // Spectrum Chart
             const noiseSpectrum = fft(noise.slice(0, 2048));
             const residualSpectrum = fft(residualNoise.slice(0, 2048));
             const freqAxis = Array.from({length: noiseSpectrum.length}, (_, i) => i * fs / 2048);
